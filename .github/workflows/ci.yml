@@ -2,9 +2,9 @@ name: Robot Framework Tests (Multi-Browser)
 
 on:
   push:
-    branches: ["main"]   # 👈 corrigé (souvent main au lieu de master)
+    branches: ["main"]
   pull_request:
-  workflow_dispatch:     # 👈 déclenchement manuel (bouton GitHub)
+  workflow_dispatch:
 
 jobs:
   test:
@@ -43,15 +43,13 @@ jobs:
         uses: browser-actions/setup-chrome@v1
 
       # =========================
-      # FIREFOX
+      # FIREFOX (FIX STABLE)
       # =========================
-      - name: Setup Firefox
+      - name: Install Firefox + Geckodriver
         if: matrix.browser == 'firefox'
-        uses: browser-actions/setup-firefox@v1
-
-      - name: Setup Geckodriver
-        if: matrix.browser == 'firefox'
-        uses: browser-actions/setup-geckodriver@v1
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y firefox geckodriver
 
       # =========================
       # RUN TESTS
