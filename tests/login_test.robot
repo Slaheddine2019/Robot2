@@ -9,7 +9,7 @@ ${Invalid_Password}    wrong
 
 *** Test Cases ***
 Login valide
-    [Setup]    Se connecter au site
+    [Setup]    Se connecter au site sauce
     [Teardown]    Close All Browsers
 
     Saisir username    ${Valid_Username}
@@ -19,7 +19,7 @@ Login valide
     Capture Page Screenshot
 
 Login invalide
-    [Setup]    Se connecter au site
+    [Setup]    Se connecter au site sauce
     [Teardown]    Close All Browsers
 
     Saisir username    ${Invalid_Username}
