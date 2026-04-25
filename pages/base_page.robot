@@ -4,7 +4,7 @@ Library    Collections
 Resource    ../variables/variables_globales.robot
 
 *** Keywords ***
-Se connecter au site sauce
+Se connecter au site 
     IF    '${BROWSER}' == 'chrome'
         ${options}=    Evaluate    __import__('selenium.webdriver').webdriver.ChromeOptions()
         Call Method    ${options}    add_argument    --headless
