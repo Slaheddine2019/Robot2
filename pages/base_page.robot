@@ -2,7 +2,8 @@
 Library    SeleniumLibrary
 Library    Collections
 Resource    ../variables/variables_globales.robot
-
+*** Variables ***
+${BROWSER}      chrome
 *** Keywords ***
 Se connecter au site 
     IF    '${BROWSER}' == 'chrome'
